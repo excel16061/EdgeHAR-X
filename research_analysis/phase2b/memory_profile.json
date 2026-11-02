@@ -1,0 +1,47 @@
+{
+  "rss_peak_mb_before_model": 221.71875,
+  "device": "mps",
+  "after_model_load": {
+    "current_allocated_mb": 751.41650390625,
+    "driver_allocated_mb": 1088.453125,
+    "rss_peak_mb": 424.15625
+  },
+  "after_inference": {
+    "current_allocated_mb": 779.9375,
+    "driver_allocated_mb": 1106.734375,
+    "rss_peak_mb": 592.484375
+  },
+  "timings_summary_ms": {
+    "single_view_ms": {
+      "median": 145.73693799684406,
+      "p95": 433.1397768997698,
+      "n": 10
+    },
+    "tg0_6_views_sequential_ms": {
+      "median": 886.1454375000903,
+      "p95": 892.311631546545,
+      "n": 10
+    },
+    "tg0_6_views_batched_ms": {
+      "median": 403.75687549749273,
+      "p95": 1137.0105874993883,
+      "n": 10
+    },
+    "decode_ms": {
+      "median": 296.34168750271783,
+      "p95": 372.5709184527659,
+      "n": 2
+    }
+  },
+  "note": "Exploratory; 2 Phase 1 clips; batched timing includes only the forward pass (preprocessing excluded); sequential timing includes preprocessing.",
+  "env": {
+    "python": "3.12.16",
+    "numpy": "1.26.4",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "torch": "2.15.0",
+    "transformers": "4.57.6",
+    "opencv": "4.10.0",
+    "device": "mps"
+  }
+}

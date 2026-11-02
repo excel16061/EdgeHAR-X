@@ -1,0 +1,77 @@
+{
+  "development_videos": 202,
+  "calibration_videos": 202,
+  "target_coverage": 0.7,
+  "accepted_count": 141,
+  "experiments": {
+    "A0_score_only": {
+      "features": [
+        "clean_score"
+      ],
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8297872340425532,
+      "selective_risk": 0.17021276595744683,
+      "incorrect_accepted": 24,
+      "risk_difference_vs_baseline": 0.0,
+      "changed_decisions_vs_baseline": 0
+    },
+    "A1_score_drops": {
+      "features": [
+        "clean_score",
+        "mean_score_drop",
+        "max_score_drop"
+      ],
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8226950354609929,
+      "selective_risk": 0.17730496453900713,
+      "incorrect_accepted": 25,
+      "risk_difference_vs_baseline": 0.007092198581560294,
+      "changed_decisions_vs_baseline": 4
+    },
+    "A2_score_agreement": {
+      "features": [
+        "clean_score",
+        "label_change_rate"
+      ],
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8652482269503546,
+      "selective_risk": 0.13475177304964536,
+      "incorrect_accepted": 19,
+      "risk_difference_vs_baseline": -0.03546099290780147,
+      "changed_decisions_vs_baseline": 38
+    },
+    "A3_score_variability": {
+      "features": [
+        "clean_score",
+        "score_variability"
+      ],
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8297872340425532,
+      "selective_risk": 0.17021276595744683,
+      "incorrect_accepted": 24,
+      "risk_difference_vs_baseline": 0.0,
+      "changed_decisions_vs_baseline": 6
+    },
+    "A4_full_guardian": {
+      "features": [
+        "clean_score",
+        "mean_score_drop",
+        "max_score_drop",
+        "label_change_rate",
+        "score_variability"
+      ],
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8652482269503546,
+      "selective_risk": 0.13475177304964536,
+      "incorrect_accepted": 19,
+      "risk_difference_vs_baseline": -0.03546099290780147,
+      "changed_decisions_vs_baseline": 36
+    }
+  },
+  "note": "Exploratory ablation on calibration data. All learned models trained only on development data. Not an independent final test."
+}

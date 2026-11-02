@@ -1,0 +1,167 @@
+{
+  "checkpoint": "microsoft/xclip-base-patch32",
+  "revision": "a2e27a78a2b5d802e894b8a1ef14f3a8ce490963",
+  "prompt": "a video of a person {}",
+  "class_order": "alphabetical UCF101 classInd (101)",
+  "frames_per_view": 8,
+  "max_decoded_frames": 96,
+  "frame_width": 224,
+  "views": [
+    {
+      "view_id": "clean_adaptive",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "blur3",
+      "transform": "blur",
+      "severity": 3,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "dark3",
+      "transform": "dark",
+      "severity": 3,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "occlusion3",
+      "transform": "occlusion",
+      "severity": 3,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "frame_drop3",
+      "transform": "frame_drop",
+      "severity": 3,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "clean_uniform",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform"
+    },
+    {
+      "view_id": "seg2_0",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        0,
+        2
+      ]
+    },
+    {
+      "view_id": "seg2_1",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        1,
+        2
+      ]
+    },
+    {
+      "view_id": "seg4_0",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        0,
+        4
+      ]
+    },
+    {
+      "view_id": "seg4_1",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        1,
+        4
+      ]
+    },
+    {
+      "view_id": "seg4_2",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        2,
+        4
+      ]
+    },
+    {
+      "view_id": "seg4_3",
+      "transform": "clean",
+      "severity": 0,
+      "strategy": "uniform",
+      "segment": [
+        3,
+        4
+      ]
+    },
+    {
+      "view_id": "frame_drop1",
+      "transform": "frame_drop",
+      "severity": 1,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "frame_drop2",
+      "transform": "frame_drop",
+      "severity": 2,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "delay1",
+      "transform": "delay",
+      "severity": 1,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "delay2",
+      "transform": "delay",
+      "severity": 2,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "delay3",
+      "transform": "delay",
+      "severity": 3,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "reverse",
+      "transform": "reverse",
+      "severity": 0,
+      "strategy": "adaptive"
+    },
+    {
+      "view_id": "segment_shuffle",
+      "transform": "segment_shuffle",
+      "severity": 0,
+      "strategy": "adaptive"
+    }
+  ],
+  "delay_fraction": {
+    "1": 0.1,
+    "2": 0.25,
+    "3": 0.5
+  },
+  "sampling_rules": {
+    "full_clip": "edgehar.sample_indices(frames, 8, strategy) on transformed frames",
+    "segment": "k-th of K np.array_split blocks; linspace(0, len-1, 8, dtype=int); repeats frames if block < 8 (flag frames_repeated)",
+    "decode": "guardian_benchmark.read_frames equivalent, max 96 frames, width 224"
+  },
+  "segment_shuffle": "4 np.array_split blocks, seeded non-identity permutation",
+  "delay": "first frame held for round(f*n) frames, last round(f*n) frames dropped",
+  "seed_rules": {
+    "guardian_views": "seed_for(42, relative, transform, severity)",
+    "new_views": "seed_for(2027, relative, view_id, 0)"
+  },
+  "fake_model": false,
+  "config_sha256": "67cc7f8cc738a33163ee3114763317957b0a65e862a99dc105a592f9d2059651"
+}

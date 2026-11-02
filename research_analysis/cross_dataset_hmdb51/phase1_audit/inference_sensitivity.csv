@@ -1,0 +1,27 @@
+method,comparison,metric,estimate,ci95_low,ci95_high,p_two_sided,ci_excludes_zero,note
+clip_bootstrap_stratified_by_class (ignores groups),guardian_o_minus_msp,aurc,-0.003399200000777758,-0.009262374604935052,0.0003023574711586389,0.1414,False,Treats correlated clips as independent; shown for contrast only.
+cluster_bootstrap_stratified_percentile (Phase 1),guardian_o_minus_msp,aurc,-0.003399200000777758,-0.01048332178481033,0.00014764124860426172,0.147,False,"50 class-specific groups, classes fixed."
+cluster_bootstrap_stratified_BCa,guardian_o_minus_msp,aurc,-0.003399200000777758,-0.014514935122746807,-1.1707099680161215e-05,,True,"z0=-0.126, acceleration=-0.0932 (group jackknife)."
+cluster_bootstrap_unstratified_percentile,guardian_o_minus_msp,aurc,-0.003399200000777758,-0.011018819750822244,0.00016333106503182615,0.1632,False,50 groups resampled ignoring class; class mix varies.
+film_level_cluster_bootstrap_unstratified,guardian_o_minus_msp,aurc,-0.003399200000777758,-0.01061175688363288,0.0,0.1186,False,46 class-agnostic film/source groups.
+cluster_jackknife_t (50 groups),guardian_o_minus_msp,aurc,-0.003399200000777758,-0.008967705615651208,0.0021693056140956925,0.22579311088805643,False,"df=49, se=0.00277"
+cluster_jackknife_t (film-level groups),guardian_o_minus_msp,aurc,-0.003399200000777758,-0.008816852683742566,0.002018452682187051,0.21284177390047038,False,"df=45, se=0.00269"
+hierarchical_bootstrap_class_then_group,guardian_o_minus_msp,aurc,-0.003399200000777758,-0.013343042068290232,0.00021242985141052098,0.3776,False,Treats the 6 classes as sampled activities; crude with 6 classes.
+paired_swap_randomization_rank_scores (film groups),guardian_o_minus_msp,rank_aurc,-0.003399200000777758,,,0.044995500449955005,,Heuristic exchangeability assumption; statistic on rank scores.
+clustered_DeLong_Obuchowski (50 groups),guardian_o_minus_msp,pooled_auroc,0.011023176936122092,-0.006699410790008551,0.028745764662252735,0.2228100922672379,False,"z=1.219, se=0.0090"
+clustered_DeLong_Obuchowski (film groups),guardian_o_minus_msp,pooled_auroc,0.011023176936122092,-0.005592805937926118,0.027639159810170302,0.19350509067452382,False,"z=1.300, se=0.0085"
+cluster_bootstrap_stratified_percentile,guardian_o_minus_msp,within_class_auroc,0.01041666666666674,-0.014520378579763864,0.060151992885439376,0.6248,False,Same-class pairs only.
+cluster_jackknife_t (50 groups),guardian_o_minus_msp,within_class_auroc,0.01041666666666674,-0.02232971919136427,0.04316305252469775,0.5256386291404271,False,df=49
+clip_bootstrap_stratified_by_class (ignores groups),guardian_full_minus_msp,aurc,-0.06856496988885735,-0.10554700386061824,-0.03606923241412757,0.0,True,Treats correlated clips as independent; shown for contrast only.
+cluster_bootstrap_stratified_percentile (Phase 1),guardian_full_minus_msp,aurc,-0.06856496988885735,-0.10846082190660859,-0.004288630703242246,0.024,True,"50 class-specific groups, classes fixed."
+cluster_bootstrap_stratified_BCa,guardian_full_minus_msp,aurc,-0.06856496988885735,-0.13427308448393105,-0.023233547258823,,True,"z0=-0.249, acceleration=-0.0745 (group jackknife)."
+cluster_bootstrap_unstratified_percentile,guardian_full_minus_msp,aurc,-0.06856496988885735,-0.11090860413945101,-0.004097327697904863,0.0238,True,50 groups resampled ignoring class; class mix varies.
+film_level_cluster_bootstrap_unstratified,guardian_full_minus_msp,aurc,-0.06856496988885735,-0.11059817922740356,-0.0032193570738671636,0.0272,True,46 class-agnostic film/source groups.
+cluster_jackknife_t (50 groups),guardian_full_minus_msp,aurc,-0.06856496988885735,-0.1330053360292987,-0.004124603748416014,0.03751280280362551,True,"df=49, se=0.03207"
+cluster_jackknife_t (film-level groups),guardian_full_minus_msp,aurc,-0.06856496988885735,-0.1331811075703489,-0.003948832207365804,0.038052463731584336,True,"df=45, se=0.03208"
+hierarchical_bootstrap_class_then_group,guardian_full_minus_msp,aurc,-0.06856496988885735,-0.1310740380136592,0.0025978975104719517,0.1048,False,Treats the 6 classes as sampled activities; crude with 6 classes.
+paired_swap_randomization_rank_scores (film groups),guardian_full_minus_msp,rank_aurc,-0.06856496988885735,,,0.0201979802019798,,Heuristic exchangeability assumption; statistic on rank scores.
+clustered_DeLong_Obuchowski (50 groups),guardian_full_minus_msp,pooled_auroc,0.06133408705483323,0.0066721556481941224,0.11599601846147234,0.027860725511540584,True,"z=2.199, se=0.0279"
+clustered_DeLong_Obuchowski (film groups),guardian_full_minus_msp,pooled_auroc,0.06133408705483323,0.006015924194065186,0.11665224991560127,0.0297688323271121,True,"z=2.173, se=0.0282"
+cluster_bootstrap_stratified_percentile,guardian_full_minus_msp,within_class_auroc,0.01041666666666674,-0.0860034822265038,0.21621793549274465,0.7862,False,Same-class pairs only.
+cluster_jackknife_t (50 groups),guardian_full_minus_msp,within_class_auroc,0.01041666666666674,-0.12001376523573981,0.1408470985690733,0.8731531453231074,False,df=49

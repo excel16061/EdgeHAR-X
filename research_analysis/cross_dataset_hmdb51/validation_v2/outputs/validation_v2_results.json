@@ -1,0 +1,456 @@
+{
+  "experiment": "HMDB51 cross-dataset validation V2 (Phase 1)",
+  "scope": "180 clips, 6 HMDB51 classes mapped to UCF101 labels, official split-1 test partition, 50 source groups. NOT a 51-class HMDB51 evaluation.",
+  "clips": 180,
+  "classes": 6,
+  "source_groups": 50,
+  "clean_accuracy": 0.6777777777777778,
+  "clean_accuracy_wilson_ci95_clip_level": [
+    0.6064074761485085,
+    0.741718569034918
+  ],
+  "clean_accuracy_ci95_cluster": [
+    0.5515427786877349,
+    0.798914444195428
+  ],
+  "class_balanced_accuracy": 0.6777777777777777,
+  "fixed_threshold_results": {
+    "baseline": {
+      "accepted": 142,
+      "coverage": 0.7888888888888889,
+      "selective_risk": 0.2746478873239437,
+      "incorrect_accepted": 39,
+      "incorrect_rejected": 19,
+      "correct_rejected": 19,
+      "threshold_from_ucf101_calibration": 0.30791276693344116,
+      "ucf101_calibration_coverage": 0.698019801980198,
+      "selective_risk_ci95_cluster": [
+        0.11926059414591526,
+        0.4315115278089677
+      ],
+      "coverage_ci95_cluster": [
+        0.6896551724137931,
+        0.8727292663476873
+      ],
+      "selective_risk_ci95_wilson_clip_level": [
+        0.2079022473768976,
+        0.35326506048248635
+      ],
+      "recorded_inference_ms_mean": 126.26738888888892,
+      "recorded_inference_ms_median": 124.48,
+      "recorded_inference_ms_p95": 132.0865
+    },
+    "guardian_occlusion": {
+      "accepted": 146,
+      "coverage": 0.8111111111111111,
+      "selective_risk": 0.2602739726027397,
+      "incorrect_accepted": 38,
+      "incorrect_rejected": 20,
+      "correct_rejected": 14,
+      "threshold_from_ucf101_calibration": 0.6601952812098213,
+      "ucf101_calibration_coverage": 0.698019801980198,
+      "selective_risk_ci95_cluster": [
+        0.10605332167832168,
+        0.41781077489265994
+      ],
+      "coverage_ci95_cluster": [
+        0.7195121951219512,
+        0.887256628003314
+      ],
+      "selective_risk_ci95_wilson_clip_level": [
+        0.1958955698057117,
+        0.3369440024266663
+      ],
+      "recorded_inference_ms_mean": 249.49122222222226,
+      "recorded_inference_ms_median": 246.745,
+      "recorded_inference_ms_p95": 268.61650000000003
+    },
+    "guardian_full": {
+      "accepted": 151,
+      "coverage": 0.8388888888888889,
+      "selective_risk": 0.2582781456953642,
+      "incorrect_accepted": 39,
+      "incorrect_rejected": 19,
+      "correct_rejected": 10,
+      "threshold_from_ucf101_calibration": 0.6658031723065879,
+      "ucf101_calibration_coverage": 0.698019801980198,
+      "selective_risk_ci95_cluster": [
+        0.11428571428571428,
+        0.4090909090909091
+      ],
+      "coverage_ci95_cluster": [
+        0.7590308291991495,
+        0.9083392857142856
+      ],
+      "selective_risk_ci95_wilson_clip_level": [
+        0.1950750727008444,
+        0.33347496450505837
+      ],
+      "recorded_inference_ms_mean": 618.8675555555556,
+      "recorded_inference_ms_median": 610.505,
+      "recorded_inference_ms_p95": 673.9820000000001
+    }
+  },
+  "ranking_metrics": {
+    "baseline": {
+      "aurc": {
+        "estimate": 0.3623331585940103,
+        "ci95": [
+          0.0853661059684776,
+          0.577021492903896
+        ],
+        "valid_replicates": 10000
+      },
+      "auroc": {
+        "estimate": 0.5272752967778406,
+        "ci95": [
+          0.32713213244783196,
+          0.8232329105003523
+        ],
+        "valid_replicates": 10000
+      },
+      "stratified_auroc": {
+        "estimate": 0.6006944444444444,
+        "ci95": [
+          0.3468825532849923,
+          0.808695652173913
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.5": {
+        "estimate": 0.32222222222222224,
+        "ci95": [
+          0.08139534883720931,
+          0.5846186440677966
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.7": {
+        "estimate": 0.2619047619047619,
+        "ci95": [
+          0.10344827586206896,
+          0.4620253164556962
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.8": {
+        "estimate": 0.2708333333333333,
+        "ci95": [
+          0.12161679536679537,
+          0.4342105263157895
+        ],
+        "valid_replicates": 10000
+      }
+    },
+    "guardian_occlusion": {
+      "aurc": {
+        "estimate": 0.3589339585932325,
+        "ci95": [
+          0.07974801867581009,
+          0.5751764614275727
+        ],
+        "valid_replicates": 10000
+      },
+      "auroc": {
+        "estimate": 0.5382984737139627,
+        "ci95": [
+          0.3341137591991225,
+          0.8389861080539046
+        ],
+        "valid_replicates": 10000
+      },
+      "stratified_auroc": {
+        "estimate": 0.6111111111111112,
+        "ci95": [
+          0.35562497193827913,
+          0.8206135013047386
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.5": {
+        "estimate": 0.32222222222222224,
+        "ci95": [
+          0.07228915662650602,
+          0.5846186440677966
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.7": {
+        "estimate": 0.2619047619047619,
+        "ci95": [
+          0.09089200273410801,
+          0.4557823129251701
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.8": {
+        "estimate": 0.2569444444444444,
+        "ci95": [
+          0.10713724168912848,
+          0.42696781050713634
+        ],
+        "valid_replicates": 10000
+      }
+    },
+    "guardian_full": {
+      "aurc": {
+        "estimate": 0.2937681887051529,
+        "ci95": [
+          0.07428519934994283,
+          0.49050280039611704
+        ],
+        "valid_replicates": 10000
+      },
+      "auroc": {
+        "estimate": 0.5886093838326738,
+        "ci95": [
+          0.41194980437623513,
+          0.8486007739609839
+        ],
+        "valid_replicates": 10000
+      },
+      "stratified_auroc": {
+        "estimate": 0.6111111111111112,
+        "ci95": [
+          0.3544515129183284,
+          0.8365217391304348
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.5": {
+        "estimate": 0.3,
+        "ci95": [
+          0.05555555555555555,
+          0.5462962962962963
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.7": {
+        "estimate": 0.25396825396825395,
+        "ci95": [
+          0.08653327338129496,
+          0.44898264695099593
+        ],
+        "valid_replicates": 10000
+      },
+      "risk@0.8": {
+        "estimate": 0.25,
+        "ci95": [
+          0.1103435598377282,
+          0.41558637145986543
+        ],
+        "valid_replicates": 10000
+      }
+    }
+  },
+  "macro_within_class_auroc": {
+    "baseline": 0.6643872939925572,
+    "guardian_occlusion": 0.6686167227833895,
+    "guardian_full": 0.6674124283773407
+  },
+  "comparisons": {
+    "guardian_occlusion_minus_baseline": {
+      "aurc": {
+        "estimate": -0.003399200000777758,
+        "ci95": [
+          -0.01048332178481033,
+          0.00014764124860426172
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.147,
+        "holm_adjusted_p": 0.147
+      },
+      "auroc": {
+        "estimate": 0.011023176936122092,
+        "ci95": [
+          -0.0007625221093185891,
+          0.0362319617421135
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.1596
+      },
+      "stratified_auroc": {
+        "estimate": 0.01041666666666674,
+        "ci95": [
+          -0.014520378579763864,
+          0.060151992885439376
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.6248
+      },
+      "fixed_risk": {
+        "estimate": -0.014373914721203973,
+        "ci95": [
+          -0.03567886705722805,
+          0.004992328302587652
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.1508
+      },
+      "risk@0.5": {
+        "estimate": 0.0,
+        "ci95": [
+          -0.02667567567567567,
+          0.0
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 1.0
+      },
+      "risk@0.7": {
+        "estimate": 0.0,
+        "ci95": [
+          -0.03278688524590162,
+          0.0
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.615
+      },
+      "risk@0.8": {
+        "estimate": -0.013888888888888895,
+        "ci95": [
+          -0.03333798882681566,
+          0.0
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.4066
+      }
+    },
+    "guardian_full_minus_baseline": {
+      "aurc": {
+        "estimate": -0.06856496988885735,
+        "ci95": [
+          -0.10846082190660859,
+          -0.004288630703242246
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.024,
+        "holm_adjusted_p": 0.048
+      },
+      "auroc": {
+        "estimate": 0.06133408705483323,
+        "ci95": [
+          0.0025558694163505514,
+          0.11466547458099562
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.0404
+      },
+      "stratified_auroc": {
+        "estimate": 0.01041666666666674,
+        "ci95": [
+          -0.0860034822265038,
+          0.21621793549274465
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.7862
+      },
+      "fixed_risk": {
+        "estimate": -0.01636974162857946,
+        "ci95": [
+          -0.06753818812595647,
+          0.031132116385920446
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.5272
+      },
+      "risk@0.5": {
+        "estimate": -0.022222222222222254,
+        "ci95": [
+          -0.06862745098039214,
+          0.011363636363636354
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.25
+      },
+      "risk@0.7": {
+        "estimate": -0.007936507936507964,
+        "ci95": [
+          -0.06923076923076923,
+          0.020003355704697953
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.5016
+      },
+      "risk@0.8": {
+        "estimate": -0.020833333333333315,
+        "ci95": [
+          -0.057142857142857134,
+          0.015384615384615385
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.4862
+      }
+    },
+    "guardian_occlusion_minus_guardian_full": {
+      "aurc": {
+        "estimate": 0.0651657698880796,
+        "ci95": [
+          8.01029797582337e-05,
+          0.10577079747369382
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.0494
+      },
+      "auroc": {
+        "estimate": -0.05031091011871114,
+        "ci95": [
+          -0.10204331331235207,
+          0.01095461841151488
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.1018
+      },
+      "stratified_auroc": {
+        "estimate": 0.0,
+        "ci95": [
+          -0.2019563642132524,
+          0.09355342741935478
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.962
+      },
+      "fixed_risk": {
+        "estimate": 0.0019958269073754864,
+        "ci95": [
+          -0.037688555525639,
+          0.04300817025359116
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.967
+      },
+      "risk@0.5": {
+        "estimate": 0.022222222222222254,
+        "ci95": [
+          -0.01282051282051283,
+          0.06451612903225801
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.3396
+      },
+      "risk@0.7": {
+        "estimate": 0.007936507936507964,
+        "ci95": [
+          -0.027976952624839995,
+          0.0546875
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.8628
+      },
+      "risk@0.8": {
+        "estimate": 0.00694444444444442,
+        "ci95": [
+          -0.027586206896551724,
+          0.043795620437956206
+        ],
+        "valid_replicates": 10000,
+        "bootstrap_p_two_sided": 0.9676
+      }
+    }
+  },
+  "bootstrap": {
+    "type": "percentile, source groups resampled with replacement within class (stratified cluster bootstrap)",
+    "replicates": 10000,
+    "seed": 2027
+  },
+  "multiple_comparisons": "Holm correction over the two pre-specified primary tests (AURC: Guardian-O vs baseline, Guardian-Full vs baseline). All other comparisons are secondary/exploratory."
+}

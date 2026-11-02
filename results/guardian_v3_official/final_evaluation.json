@@ -1,0 +1,77 @@
+{
+  "evaluation_videos": 505,
+  "clean_accuracy": 0.6871287128712872,
+  "frozen_model_sha256": "e56fececf1f980a2eafbc9fc882ac4157b3829802a8c492b9a31994db1022cd1",
+  "models": {
+    "baseline": {
+      "coverage": 0.7207920792079208,
+      "accepted": 364,
+      "accepted_accuracy": 0.7994505494505495,
+      "selective_risk": 0.2005494505494505,
+      "incorrect_accepted": 73,
+      "threshold": 0.30791276693344116,
+      "mean_inference_ms": 127.49455445544554,
+      "median_inference_ms": 125.01,
+      "p95_inference_ms": 136.038
+    },
+    "guardian_occlusion": {
+      "coverage": 0.7069306930693069,
+      "accepted": 357,
+      "accepted_accuracy": 0.8067226890756303,
+      "selective_risk": 0.19327731092436973,
+      "incorrect_accepted": 69,
+      "threshold": 0.6601952812098213,
+      "mean_inference_ms": 264.90643564356435,
+      "median_inference_ms": 262.13,
+      "p95_inference_ms": 277.506
+    },
+    "guardian_full": {
+      "coverage": 0.7188118811881188,
+      "accepted": 363,
+      "accepted_accuracy": 0.8071625344352618,
+      "selective_risk": 0.19283746556473824,
+      "incorrect_accepted": 70,
+      "threshold": 0.6658031723065879,
+      "mean_inference_ms": 671.6779801980198,
+      "median_inference_ms": 668.54,
+      "p95_inference_ms": 711.3359999999999
+    }
+  },
+  "comparisons": {
+    "guardian_occlusion_minus_baseline": {
+      "replicates": 10000,
+      "risk_difference": -0.007272139625080776,
+      "ci_95": [
+        -0.02462741253340275,
+        0.009164907524983392
+      ],
+      "note": "Paired video-level bootstrap of fixed decisions. Thresholds and trained models are held fixed."
+    },
+    "guardian_full_minus_baseline": {
+      "replicates": 10000,
+      "risk_difference": -0.007711984984712261,
+      "ci_95": [
+        -0.0330824139265002,
+        0.01682059074812351
+      ],
+      "note": "Paired video-level bootstrap of fixed decisions. Thresholds and trained models are held fixed."
+    },
+    "guardian_occlusion_minus_full": {
+      "replicates": 10000,
+      "risk_difference": 0.0004398453596314855,
+      "ci_95": [
+        -0.022783966851098774,
+        0.023912018766991124
+      ],
+      "note": "Paired video-level bootstrap of fixed decisions. Thresholds and trained models are held fixed."
+    }
+  },
+  "limitations": [
+    "Group-disjoint evaluation from official UCF101 training partition.",
+    "Official test set was inspected in earlier experiments.",
+    "Probe variants were selected using calibration results.",
+    "Bootstrap holds models and thresholds fixed.",
+    "Inference time sums recorded model inference times only.",
+    "No end-to-end latency or energy measurements."
+  ]
+}

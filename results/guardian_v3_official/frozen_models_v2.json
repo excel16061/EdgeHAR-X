@@ -1,0 +1,112 @@
+{
+  "experiment": "Guardian v3 fixed-threshold evaluation",
+  "target_calibration_coverage": 0.7,
+  "training_videos": 202,
+  "calibration_videos": 202,
+  "evaluation_videos_planned": 505,
+  "seed": 42,
+  "models": {
+    "baseline": {
+      "feature_indices": [
+        0
+      ],
+      "threshold": 0.30791276693344116,
+      "calibration_coverage": 0.698019801980198,
+      "required_conditions": [
+        [
+          "clean",
+          0
+        ]
+      ]
+    },
+    "guardian_occlusion": {
+      "features": [
+        "clean_score",
+        "occlusion_severity3_label_change"
+      ],
+      "required_conditions": [
+        [
+          "clean",
+          0
+        ],
+        [
+          "occlusion",
+          3
+        ]
+      ],
+      "weights": [
+        1.082319502530498,
+        0.5062528392789509,
+        -0.15529016760650988
+      ],
+      "feature_mean": [
+        0.5057034198157858,
+        0.10396039603960396
+      ],
+      "feature_std": [
+        0.243946881250898,
+        0.30520916122373015
+      ],
+      "threshold": 0.6601952812098213,
+      "calibration_coverage": 0.698019801980198
+    },
+    "guardian_full": {
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "weights": [
+        1.1058705628354264,
+        0.39052630986365877,
+        -0.05733439808798865,
+        0.0618672136318307,
+        -0.3721874775062901,
+        0.08186469030106598
+      ],
+      "feature_mean": [
+        0.5057034198157858,
+        0.07993040998733722,
+        0.21012756661834694,
+        0.1448019801980198,
+        0.09348816727067623
+      ],
+      "feature_std": [
+        0.243946881250898,
+        0.08090930043090526,
+        0.14668907436912207,
+        0.2532173378623561,
+        0.057979031249602235
+      ],
+      "threshold": 0.6658031723065879,
+      "calibration_coverage": 0.698019801980198,
+      "required_conditions": [
+        [
+          "clean",
+          0
+        ],
+        [
+          "blur",
+          3
+        ],
+        [
+          "dark",
+          3
+        ],
+        [
+          "occlusion",
+          3
+        ],
+        [
+          "frame_drop",
+          3
+        ]
+      ]
+    }
+  },
+  "evaluation_data_used": false,
+  "note": "Guardian-O trained on clean score and occlusion-only label change. Guardian-Full uses all five original features. Thresholds selected on calibration data. Evaluation data not used.",
+  "model_freeze_version": 2
+}

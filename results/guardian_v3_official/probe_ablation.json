@@ -1,0 +1,94 @@
+{
+  "development_videos": 202,
+  "calibration_videos": 202,
+  "target_coverage": 0.7,
+  "results": {
+    "B0_score_only": {
+      "probes": [],
+      "probe_count": 0,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8297872340425532,
+      "selective_risk": 0.17021276595744683,
+      "incorrect_accepted": 24,
+      "risk_difference": 0.0
+    },
+    "B1_blur": {
+      "probes": [
+        "blur"
+      ],
+      "probe_count": 1,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8439716312056738,
+      "selective_risk": 0.15602836879432624,
+      "incorrect_accepted": 22,
+      "risk_difference": -0.014184397163120588
+    },
+    "B2_dark": {
+      "probes": [
+        "dark"
+      ],
+      "probe_count": 1,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8581560283687943,
+      "selective_risk": 0.14184397163120566,
+      "incorrect_accepted": 20,
+      "risk_difference": -0.028368794326241176
+    },
+    "B3_occlusion": {
+      "probes": [
+        "occlusion"
+      ],
+      "probe_count": 1,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8652482269503546,
+      "selective_risk": 0.13475177304964536,
+      "incorrect_accepted": 19,
+      "risk_difference": -0.03546099290780147
+    },
+    "B4_frame_drop": {
+      "probes": [
+        "frame_drop"
+      ],
+      "probe_count": 1,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8368794326241135,
+      "selective_risk": 0.16312056737588654,
+      "incorrect_accepted": 23,
+      "risk_difference": -0.007092198581560294
+    },
+    "B5_blur_dark": {
+      "probes": [
+        "blur",
+        "dark"
+      ],
+      "probe_count": 2,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8439716312056738,
+      "selective_risk": 0.15602836879432624,
+      "incorrect_accepted": 22,
+      "risk_difference": -0.014184397163120588
+    },
+    "B6_all_four": {
+      "probes": [
+        "blur",
+        "dark",
+        "occlusion",
+        "frame_drop"
+      ],
+      "probe_count": 4,
+      "coverage": 0.698019801980198,
+      "accepted": 141,
+      "accepted_accuracy": 0.8652482269503546,
+      "selective_risk": 0.13475177304964536,
+      "incorrect_accepted": 19,
+      "risk_difference": -0.03546099290780147
+    }
+  },
+  "note": "Exploratory calibration comparison; not independent testing."
+}

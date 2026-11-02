@@ -1,0 +1,496 @@
+{
+  "scope": "6-class, 180-clip HMDB51 subset (split-1 test) and 505-video UCF101 evaluation split. Not a 51-class HMDB51 evaluation.",
+  "checks": {
+    "max_abs_score_diff_vs_phase1": 2.220446049250313e-16,
+    "threshold_reproduced/msp": 0.0,
+    "threshold_reproduced/guardian_o": 0.0,
+    "threshold_reproduced/guardian_full": 0.0,
+    "ucf101_final_eval_and_aurc_reproduced": true,
+    "ties": {
+      "hmdb51": {
+        "msp": 0,
+        "guardian_o": 0,
+        "guardian_full": 0,
+        "mean_view_conf": 0,
+        "min_view_conf": 0,
+        "agreement_then_msp": 0,
+        "occ_agreement_then_msp": 0
+      },
+      "ucf101": {
+        "msp": 0,
+        "guardian_o": 0,
+        "guardian_full": 0,
+        "mean_view_conf": 0,
+        "min_view_conf": 0,
+        "agreement_then_msp": 0,
+        "occ_agreement_then_msp": 0
+      }
+    },
+    "phase1_settings_reproduced": true,
+    "loco_reproduced": true
+  },
+  "phase1_reproduction": {
+    "guardian_o": {
+      "delta_aurc": -0.003399200000777758,
+      "ci95": [
+        -0.01048332178481033,
+        0.00014764124860426172
+      ],
+      "p_boot": 0.147,
+      "replicates_ge_zero": 735,
+      "replicates_le_zero": 9467,
+      "phase1_delta": -0.003399200000777758,
+      "phase1_ci95": [
+        -0.01048332178481033,
+        0.00014764124860426172
+      ],
+      "phase1_p": 0.147,
+      "phase1_holm": 0.147,
+      "matches_phase1": true,
+      "monte_carlo_se_of_p": 0.003541059163583687,
+      "holm": 0.147,
+      "holm_matches_phase1": true
+    },
+    "guardian_full": {
+      "delta_aurc": -0.06856496988885735,
+      "ci95": [
+        -0.10846082190660859,
+        -0.004288630703242246
+      ],
+      "p_boot": 0.024,
+      "replicates_ge_zero": 120,
+      "replicates_le_zero": 9880,
+      "phase1_delta": -0.06856496988885735,
+      "phase1_ci95": [
+        -0.10846082190660859,
+        -0.004288630703242246
+      ],
+      "phase1_p": 0.024,
+      "phase1_holm": 0.048,
+      "matches_phase1": true,
+      "monte_carlo_se_of_p": 0.0015304901175767194,
+      "holm": 0.048,
+      "holm_matches_phase1": true
+    }
+  },
+  "swap_randomization": {
+    "guardian_o": {
+      "observed_rank_aurc_diff": -0.003399200000777758,
+      "p_two_sided": 0.044995500449955005,
+      "permutations": 10000
+    },
+    "guardian_full": {
+      "observed_rank_aurc_diff": -0.06856496988885735,
+      "p_two_sided": 0.0201979802019798,
+      "permutations": 10000
+    }
+  },
+  "group_audit": {
+    "class_specific_groups": 50,
+    "class_agnostic_film_groups_no_franchise_merge": 47,
+    "class_agnostic_groups_franchise_merge": 46,
+    "prefixes_spanning_classes_within_subset": {
+      "Glory": [
+        "punch",
+        "ride_horse"
+      ]
+    },
+    "film_merges": {
+      "Glory": [
+        "punch/Glory",
+        "ride_horse/Glory"
+      ],
+      "Lord_of_the_Rings": [
+        "punch/Return_of_the_King_4",
+        "punch/Two_Towers_3",
+        "ride_horse/Return_of_the_King_2",
+        "ride_horse/Return_of_the_King_6"
+      ]
+    },
+    "subset_prefixes_also_in_other_hmdb51_classes": {
+      "Two_Towers_3": [
+        "drink",
+        "eat",
+        "fall_floor",
+        "kick",
+        "ride_horse",
+        "smile"
+      ],
+      "Epee_Fencing_Attacks_-_Remises": [
+        "sword_exercise"
+      ],
+      "Glory": [
+        "clap",
+        "eat",
+        "fall_floor",
+        "hit",
+        "laugh",
+        "run",
+        "shoot_gun",
+        "sit",
+        "smile",
+        "smoke",
+        "stand",
+        "walk",
+        "wave"
+      ],
+      "Return_of_the_King_4": [
+        "climb",
+        "climb_stairs",
+        "fall_floor",
+        "ride_horse",
+        "run",
+        "smile",
+        "sword"
+      ],
+      "Italian_Job_4": [
+        "drink"
+      ],
+      "Return_of_the_King_2": [
+        "drink",
+        "talk"
+      ],
+      "The_Departed_-_Part_1": [
+        "drink",
+        "eat",
+        "sit",
+        "turn"
+      ],
+      "HARD_FACE_SLAP_COMPILATION_-_THE_FUNNIEST_FACE_SLAPS_EVER!!_-_Old_school_Vids": [
+        "hit"
+      ],
+      "A_Beautiful_Mind_4": [
+        "hug",
+        "run",
+        "stand",
+        "turn",
+        "walk"
+      ],
+      "Hamlet_(1996)_Fencing_Scenes": [
+        "talk"
+      ],
+      "The_Three_Musketeers_(1993)_Final_Battle_1_3": [
+        "draw_sword"
+      ]
+    },
+    "group_sizes": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      8,
+      9,
+      12,
+      15
+    ],
+    "official_split1_counts": {
+      "fencing": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 16
+      },
+      "punch": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 26
+      },
+      "pushup": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 3
+      },
+      "pullup": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 4
+      },
+      "ride_bike": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 3
+      },
+      "ride_horse": {
+        "test_clips_split1": 30,
+        "train_clips_split1": 70,
+        "unused_split1": 16
+      }
+    }
+  },
+  "hmdb51_per_class": [
+    {
+      "class": "fencing",
+      "accuracy": 0.36666666666666664,
+      "top_predictions": [
+        [
+          "TaiChi",
+          14
+        ],
+        [
+          "Fencing",
+          11
+        ],
+        [
+          "SalsaSpin",
+          2
+        ],
+        [
+          "PlayingViolin",
+          1
+        ]
+      ],
+      "within_auroc/msp": 0.42105263157894735,
+      "within_auroc/guardian_o": 0.45454545454545453,
+      "within_auroc/guardian_full": 0.3444976076555024,
+      "within_auroc/mean_view_conf": 0.35406698564593303,
+      "within_auroc/min_view_conf": 0.3253588516746411,
+      "within_auroc/agreement_then_msp": 0.3588516746411483,
+      "within_auroc/occ_agreement_then_msp": 0.45454545454545453,
+      "mean_score/msp": 0.4453687533736229,
+      "mean_score/guardian_o": 0.6999312850044094,
+      "mean_score/guardian_full": 0.6824332423511659
+    },
+    {
+      "class": "pullup",
+      "accuracy": 1.0,
+      "top_predictions": [
+        [
+          "PullUps",
+          30
+        ]
+      ],
+      "within_auroc/msp": null,
+      "within_auroc/guardian_o": null,
+      "within_auroc/guardian_full": null,
+      "within_auroc/mean_view_conf": null,
+      "within_auroc/min_view_conf": null,
+      "within_auroc/agreement_then_msp": null,
+      "within_auroc/occ_agreement_then_msp": null,
+      "mean_score/msp": 0.6119875619808833,
+      "mean_score/guardian_o": 0.7914820031645642,
+      "mean_score/guardian_full": 0.8204586933633348
+    },
+    {
+      "class": "punch",
+      "accuracy": 0.1,
+      "top_predictions": [
+        [
+          "BoxingPunchingBag",
+          19
+        ],
+        [
+          "Punch",
+          3
+        ],
+        [
+          "Archery",
+          3
+        ],
+        [
+          "RockClimbingIndoor",
+          2
+        ]
+      ],
+      "within_auroc/msp": 0.1111111111111111,
+      "within_auroc/guardian_o": 0.09876543209876543,
+      "within_auroc/guardian_full": 0.04938271604938271,
+      "within_auroc/mean_view_conf": 0.09876543209876543,
+      "within_auroc/min_view_conf": 0.1111111111111111,
+      "within_auroc/agreement_then_msp": 0.04938271604938271,
+      "within_auroc/occ_agreement_then_msp": 0.09876543209876543,
+      "mean_score/msp": 0.47129049425323805,
+      "mean_score/guardian_o": 0.7113411525750528,
+      "mean_score/guardian_full": 0.7090139162794968
+    },
+    {
+      "class": "pushup",
+      "accuracy": 0.9,
+      "top_predictions": [
+        [
+          "PushUps",
+          27
+        ],
+        [
+          "WallPushups",
+          2
+        ],
+        [
+          "CliffDiving",
+          1
+        ]
+      ],
+      "within_auroc/msp": 1.0,
+      "within_auroc/guardian_o": 1.0,
+      "within_auroc/guardian_full": 1.0,
+      "within_auroc/mean_view_conf": 1.0,
+      "within_auroc/min_view_conf": 1.0,
+      "within_auroc/agreement_then_msp": 1.0,
+      "within_auroc/occ_agreement_then_msp": 1.0,
+      "mean_score/msp": 0.4101059210797151,
+      "mean_score/guardian_o": 0.7105409843852875,
+      "mean_score/guardian_full": 0.7342182627103108
+    },
+    {
+      "class": "ride_bike",
+      "accuracy": 0.9666666666666667,
+      "top_predictions": [
+        [
+          "Biking",
+          29
+        ],
+        [
+          "SkateBoarding",
+          1
+        ]
+      ],
+      "within_auroc/msp": 1.0,
+      "within_auroc/guardian_o": 1.0,
+      "within_auroc/guardian_full": 1.0,
+      "within_auroc/mean_view_conf": 1.0,
+      "within_auroc/min_view_conf": 0.6896551724137931,
+      "within_auroc/agreement_then_msp": 1.0,
+      "within_auroc/occ_agreement_then_msp": 1.0,
+      "mean_score/msp": 0.47778193826476734,
+      "mean_score/guardian_o": 0.7370673796367496,
+      "mean_score/guardian_full": 0.7687220187540641
+    },
+    {
+      "class": "ride_horse",
+      "accuracy": 0.7333333333333333,
+      "top_predictions": [
+        [
+          "HorseRiding",
+          22
+        ],
+        [
+          "Archery",
+          4
+        ],
+        [
+          "HorseRace",
+          3
+        ],
+        [
+          "TaiChi",
+          1
+        ]
+      ],
+      "within_auroc/msp": 0.7897727272727273,
+      "within_auroc/guardian_o": 0.7897727272727273,
+      "within_auroc/guardian_full": 0.9431818181818182,
+      "within_auroc/mean_view_conf": 0.8352272727272727,
+      "within_auroc/min_view_conf": 0.8920454545454546,
+      "within_auroc/agreement_then_msp": 0.9602272727272727,
+      "within_auroc/occ_agreement_then_msp": 0.7897727272727273,
+      "mean_score/msp": 0.45374565025170643,
+      "mean_score/guardian_o": 0.7335760860538245,
+      "mean_score/guardian_full": 0.7455590597369635
+    }
+  ],
+  "leave_one_class_out": [
+    {
+      "held_out_class": "fencing",
+      "msp": 0.2652890796965617,
+      "guardian_o": 0.2641250331597136,
+      "guardian_full": 0.19927457685583796,
+      "guardian_o_minus_msp": -0.0011640465368480957,
+      "guardian_full_minus_msp": -0.06601450284072372
+    },
+    {
+      "held_out_class": "pullup",
+      "msp": 0.49877142196564817,
+      "guardian_o": 0.4941208703740452,
+      "guardian_full": 0.4153235811405662,
+      "guardian_o_minus_msp": -0.004650551591602992,
+      "guardian_full_minus_msp": -0.08344784082508194
+    },
+    {
+      "held_out_class": "punch",
+      "msp": 0.2009207360329859,
+      "guardian_o": 0.1974735461801165,
+      "guardian_full": 0.1548546924412176,
+      "guardian_o_minus_msp": -0.0034471898528694034,
+      "guardian_full_minus_msp": -0.0460660435917683
+    },
+    {
+      "held_out_class": "pushup",
+      "msp": 0.3995736771293186,
+      "guardian_o": 0.39632285275340245,
+      "guardian_full": 0.32473986995734255,
+      "guardian_o_minus_msp": -0.0032508243759161726,
+      "guardian_full_minus_msp": -0.07483380717197607
+    },
+    {
+      "held_out_class": "ride_bike",
+      "msp": 0.4161612435992782,
+      "guardian_o": 0.41241806540632386,
+      "guardian_full": 0.36429237124080466,
+      "guardian_o_minus_msp": -0.003743178192954333,
+      "guardian_full_minus_msp": -0.05186887235847354
+    },
+    {
+      "held_out_class": "ride_horse",
+      "msp": 0.3873161295003004,
+      "guardian_o": 0.3833747869134904,
+      "guardian_full": 0.3176856172085568,
+      "guardian_o_minus_msp": -0.003941342586810004,
+      "guardian_full_minus_msp": -0.06963051229174361
+    }
+  ],
+  "permutations": 10000,
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 2027
+  },
+  "thresholds_used": {
+    "msp": 0.30791276693344116,
+    "guardian_o": 0.6601952812098213,
+    "guardian_full": 0.6658031723065879,
+    "mean_view_conf": 0.27597218453884126,
+    "min_view_conf": 0.13620998710393906,
+    "agreement_then_msp": 6.522652983665466,
+    "occ_agreement_then_msp": 2.2787201404571533
+  },
+  "hmdb51_labels_used_for_thresholds_or_training": false
+}

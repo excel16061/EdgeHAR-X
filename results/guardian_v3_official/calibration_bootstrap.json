@@ -1,0 +1,12 @@
+{
+  "evaluation_videos": 202,
+  "bootstrap_replicates": 10000,
+  "observed_risk_difference": -0.03546099290780147,
+  "ci_95": [
+    -0.0864645905968119,
+    0.013607699966810438
+  ],
+  "method": "paired video-level percentile bootstrap",
+  "acceptance_decisions": "fixed",
+  "note": "Exploratory calibration-set uncertainty estimate. Acceptance decisions are fixed; coverage is not re-matched within each bootstrap replicate. This is not an independent final test."
+}

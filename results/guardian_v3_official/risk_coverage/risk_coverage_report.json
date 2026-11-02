@@ -1,0 +1,147 @@
+{
+  "project": "EdgeHAR-X Guardian v3",
+  "analysis": "risk_coverage",
+  "evaluation_videos": 505,
+  "frozen_model_sha256": "e56fececf1f980a2eafbc9fc882ac4157b3829802a8c492b9a31994db1022cd1",
+  "bootstrap_seed": 2027,
+  "bootstrap_replicates": 5000,
+  "aurc_definition": "Discrete mean of selective risk over accepted-set sizes 1 through N.",
+  "models": {
+    "baseline": {
+      "aurc": 0.12792817257279357,
+      "risk_at_coverage": {
+        "50": {
+          "target_coverage": 0.5,
+          "actual_coverage": 0.499009900990099,
+          "accepted": 252,
+          "risk": 0.1071428571428571
+        },
+        "70": {
+          "target_coverage": 0.7,
+          "actual_coverage": 0.699009900990099,
+          "accepted": 353,
+          "risk": 0.18696883852691215
+        },
+        "80": {
+          "target_coverage": 0.8,
+          "actual_coverage": 0.8,
+          "accepted": 404,
+          "risk": 0.23267326732673266
+        },
+        "90": {
+          "target_coverage": 0.9,
+          "actual_coverage": 0.899009900990099,
+          "accepted": 454,
+          "risk": 0.2687224669603524
+        }
+      },
+      "frozen_operating_point": {
+        "coverage": 0.7207920792079208,
+        "accepted": 364,
+        "risk": 0.2005494505494505
+      }
+    },
+    "guardian_occlusion": {
+      "aurc": 0.12738286358247183,
+      "risk_at_coverage": {
+        "50": {
+          "target_coverage": 0.5,
+          "actual_coverage": 0.499009900990099,
+          "accepted": 252,
+          "risk": 0.10317460317460314
+        },
+        "70": {
+          "target_coverage": 0.7,
+          "actual_coverage": 0.699009900990099,
+          "accepted": 353,
+          "risk": 0.18696883852691215
+        },
+        "80": {
+          "target_coverage": 0.8,
+          "actual_coverage": 0.8,
+          "accepted": 404,
+          "risk": 0.2376237623762376
+        },
+        "90": {
+          "target_coverage": 0.9,
+          "actual_coverage": 0.899009900990099,
+          "accepted": 454,
+          "risk": 0.2665198237885462
+        }
+      },
+      "frozen_operating_point": {
+        "coverage": 0.7069306930693069,
+        "accepted": 357,
+        "risk": 0.19327731092436973
+      }
+    },
+    "guardian_full": {
+      "aurc": 0.12389650870171304,
+      "risk_at_coverage": {
+        "50": {
+          "target_coverage": 0.5,
+          "actual_coverage": 0.499009900990099,
+          "accepted": 252,
+          "risk": 0.09523809523809523
+        },
+        "70": {
+          "target_coverage": 0.7,
+          "actual_coverage": 0.699009900990099,
+          "accepted": 353,
+          "risk": 0.18696883852691215
+        },
+        "80": {
+          "target_coverage": 0.8,
+          "actual_coverage": 0.8,
+          "accepted": 404,
+          "risk": 0.21287128712871284
+        },
+        "90": {
+          "target_coverage": 0.9,
+          "actual_coverage": 0.899009900990099,
+          "accepted": 454,
+          "risk": 0.26211453744493396
+        }
+      },
+      "frozen_operating_point": {
+        "coverage": 0.7188118811881188,
+        "accepted": 363,
+        "risk": 0.19283746556473824
+      }
+    }
+  },
+  "aurc_comparisons": {
+    "guardian_occlusion_minus_baseline": {
+      "difference": -0.0005453089903217356,
+      "ci_95": [
+        -0.004338554827931672,
+        0.0030507075528472443
+      ],
+      "bootstrap_replicates": 5000
+    },
+    "guardian_full_minus_baseline": {
+      "difference": -0.004031663871080532,
+      "ci_95": [
+        -0.012273933638518968,
+        0.00470909016128796
+      ],
+      "bootstrap_replicates": 5000
+    },
+    "guardian_occlusion_minus_guardian_full": {
+      "difference": 0.0034863548807587963,
+      "ci_95": [
+        -0.0045262064382536535,
+        0.010797325405347643
+      ],
+      "bootstrap_replicates": 5000
+    }
+  },
+  "limitations": [
+    "Exploratory analysis of a previously inspected evaluation set.",
+    "Risk-coverage points are ranked on evaluation scores.",
+    "Frozen thresholds were not changed.",
+    "AURC comparisons use paired video-level bootstrap.",
+    "Bootstrap samples with duplicate scores use stable tie ordering.",
+    "No end-to-end latency or energy measurement."
+  ]
+}

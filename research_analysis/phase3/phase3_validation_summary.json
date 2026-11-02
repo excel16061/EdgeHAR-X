@@ -1,0 +1,122 @@
+{
+ "note": "Aggregate extract of private Phase 3 records; contains no clip identifiers. No robustness experiment has been run.",
+ "parity": {
+  "n_clips": 50,
+  "views_compared": 950,
+  "P1_max_abs_pre_norm": 1.1920928955078125e-07,
+  "P1_mean_abs_pre_norm": 1.3997660816643605e-08,
+  "P2_top1_agreement": 1.0,
+  "P2_max_abs_dp": 2.292001184178716e-06,
+  "P2_median_abs_dp": 3.949409844022922e-07,
+  "P2_monitor_max_abs_diff": {
+   "msp": 1.6016371969795884e-06,
+   "guardian_full": 5.318687625877061e-07,
+   "tg_min": 2.1461291996593967e-06,
+   "tg0": 1.183037544816301e-06,
+   "energy": 2.6067677524110877e-05
+  },
+  "P2_decision_agreement": {
+   "msp": 1.0,
+   "guardian_full": 1.0,
+   "tg_min": 1.0,
+   "tg0": 1.0,
+   "energy": 1.0
+  },
+  "P6_identical_reruns": true,
+  "criteria_pass": {
+   "P1": true,
+   "P2": true,
+   "P3": false,
+   "P6": true
+  },
+  "all_pass": false
+ },
+ "P3_original": {
+  "criterion": "relative error <= 5% for every one of 25 directions (frozen)",
+  "n_directions": 25,
+  "n_within_5pct": 24,
+  "max_rel_err": 0.08696861189108544,
+  "median_rel_err": 0.00019757882021938017,
+  "verdict": "FAIL (stands; not overturned by P3-v2)"
+ },
+ "P3_v2": {
+  "verdict": "PASS",
+  "n_primary_checks": 60,
+  "C1_pass": 60,
+  "C1_max_rel_diff": 9.936746406576527e-13,
+  "C2s_pass": 60,
+  "C2_not_applicable_fraction": 0.0,
+  "C4": {
+   "L_NA": {
+    "decreases": 5,
+    "beats_all_random": 5,
+    "pass": true
+   },
+   "L_MSP": {
+    "decreases": 5,
+    "beats_all_random": 5,
+    "pass": true
+   },
+   "L_TG": {
+    "decreases": 5,
+    "beats_all_random": 5,
+    "pass": true
+   },
+   "L_GF": {
+    "decreases": 5,
+    "beats_all_random": 5,
+    "pass": true
+   }
+  },
+  "C4b": {
+   "msp_term": {
+    "increases": 5,
+    "beats_all_random": 5,
+    "flat_clips": 0,
+    "pass": true
+   },
+   "tgmin_term": {
+    "increases": 5,
+    "beats_all_random": 5,
+    "flat_clips": 0,
+    "pass": true
+   },
+   "gf_term": {
+    "increases": 5,
+    "beats_all_random": 5,
+    "flat_clips": 0,
+    "pass": true
+   }
+  },
+  "note": "Separate, prospectively frozen protocol adopted as a documented deviation."
+ },
+ "cpu_vs_mps_timing_s_per_8frame_view": {
+  "cpu_threads4": {
+   "forward_median": 0.3857609164988389,
+   "backward_median": 0.13419499999872642
+  },
+  "cpu_threads8": {
+   "forward_median": 0.37525345850735903,
+   "backward_median": 0.1388228750001872
+  },
+  "cpu_threads10": {
+   "forward_median": 0.36136158300359966,
+   "backward_median": 0.1320568130031461
+  },
+  "mps_threads4": {
+   "forward_median": 0.16830020849738503,
+   "backward_median": 28.185813853997388
+  }
+ },
+ "frozen_record_sha256": {
+  "CRITERIA_FREEZE.json": "73e4c496389a830c8f37ac23d20526a58016127a00b28e7ffda25e1197c382ad",
+  "P3V2_FREEZE.json": "0268f81a900c15cdbf9b4731dd712fee74ce397d73600585ef8a2156dde6d4c1",
+  "parity_results.json": "b3805c4aac520ec34b15443f4637c7eb2611a445ee791e1a8c279167e3af34ec",
+  "p3v2_measurements.json": "903e1595049545ec1cf7eacf65070dab095cec0af7b7a4c88bfbccd31fbe3bf5",
+  "FREEZE.json": "4bf56c1517d616273c6a63b074d7a9ac64c332bb8c705c5fd37a17f423847664"
+ },
+ "included_file_sha256": {
+  "research_analysis/phase2a/PREREGISTRATION.md": "9cb1fe94e7b31788a6663596c7b3b0858713ce2bc25ce07ae2829e7d4a0256fe",
+  "results/guardian_v3_official/frozen_models_v2.json": "e56fececf1f980a2eafbc9fc882ac4157b3829802a8c492b9a31994db1022cd1"
+ }
+}
