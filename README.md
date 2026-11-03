@@ -171,20 +171,42 @@ python -m pytest -q -p no:cacheprovider research_analysis/cross_dataset_hmdb51/p
 ## Provenance and AI assistance
 
 EdgeHAR-X was created and is maintained by Syed Omer Ali. Development used
-AI coding assistants:
-- **ChatGPT (OpenAI):** the initial EdgeHAR MVP and Guardian v1 files
-  were produced in the maintainer's own ChatGPT conversations, and were
-  later modified locally.
-- **Claude Code (Anthropic):** for the analysis code, protocols and
-  documentation under `research_analysis/`, and for this release's
-  documents.
+AI coding assistants under the maintainer's direction:
+- **ChatGPT (OpenAI):** the initial EdgeHAR MVP and Guardian v1 files were
+  produced in the maintainer's own ChatGPT conversations and later modified
+  locally. These files are **not** part of this reduced release.
+- **Claude Code (Anthropic):** the analysis code, protocols and
+  documentation under `research_analysis/`, and this release's documents,
+  including all six source files in this release.
 
-Whether third-party code entered the earlier ChatGPT conversations has not
-been determined. Details and verification status:
-[AI_ASSISTANCE.md](AI_ASSISTANCE.md),
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+**Maintainer attestation:** no third-party source code was knowingly
+supplied to the ChatGPT conversations. This is the maintainer's statement,
+not independent proof. A targeted public-code comparison found no copied
+code in this release, but it was not exhaustive.
+
+Details and verification status: [AI_ASSISTANCE.md](AI_ASSISTANCE.md),
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md),
+[CITATIONS.md](CITATIONS.md).
 
 ## Licence
 
-**No licence has been granted.** All rights are reserved until a `LICENSE`
-file is added.
+The original code, documentation and figures in this repository are
+released under the **MIT License** (see [LICENSE](LICENSE)), Copyright (c)
+2026 Syed Omer Ali.
+
+**What MIT covers.** It applies **only to material the maintainer has the
+right to license.** It does **not** cover, and grants no rights in:
+- **Datasets:** UCF101 and HMDB51. No dataset media are included; see
+  [DATA.md](DATA.md) for their terms, including UCF101's unresolved
+  redistribution terms.
+- **The pretrained model:** X-CLIP (`microsoft/xclip-base-patch32`), which
+  is under its own MIT licence from its authors, is downloaded at run time
+  and is not included.
+- **Third-party software dependencies,** which keep their own licences.
+- **Cited works and other third-party materials** (see
+  [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
+
+**What it does not claim.** Facts and numerical results (for example
+aggregate statistics and the TA3N category mapping) are not claimed as
+owned. Protection for AI-assisted material may be limited, and MIT grants
+only the rights the maintainer actually holds.

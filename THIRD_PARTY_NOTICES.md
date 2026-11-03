@@ -1,14 +1,20 @@
 # Third-Party Notices
 
-- **What this repository contains:** research code, documentation and
-  aggregate results. It does **not** knowingly redistribute third-party
-  source code, model weights or dataset media. See §6 for open provenance
-  questions.
+- **What this repository contains:** research code, documentation,
+  figures and aggregate results. It does **not** knowingly redistribute
+  third-party source code, model weights or dataset media. See §6 for
+  provenance.
 - **What it depends on, and cites:** the components below.
 
-> **Licence status of this repository:** no licence has been granted yet;
-> all rights are reserved until a `LICENSE` file is added. Nothing in this
-> file grants rights to this repository's own code.
+> **Licence status of this repository:**
+> - **What MIT covers:** the original code, documentation and figures in
+>   this repository are licensed under the MIT License (`LICENSE`), **only
+>   to the extent that the maintainer holds rights in them**.
+> - **What it does not cover:** everything listed in this file (runtime
+>   dependencies, the pretrained model, datasets, cited works) remains
+>   under its own terms. MIT grants no rights in it.
+> - **Facts:** factual material, such as numbers and the category mapping,
+>   is not claimed as owned.
 
 ## 1. Runtime dependencies (installed by the user; not redistributed)
 
@@ -41,8 +47,8 @@ The licences were read from the installed packages' metadata on
 
 | Dataset | Citation | Use here | Terms |
 |---|---|---|---|
-| UCF101 | K. Soomro, A. R. Zamir, M. Shah. "UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild." CRCV-TR-12-01, 2012. arXiv:1212.0402 | Class names (prompts), splits, evaluation | Videos originate from YouTube. **The terms of use were not verified** by the preparer; users must obtain the data from the provider and follow its terms. |
-| HMDB51 | H. Kuehne, H. Jhuang, E. Garrote, T. Poggio, T. Serre. "HMDB: A Large Video Database for Human Motion Recognition." ICCV 2011 | Cross-dataset evaluation (mapped categories) | Clips come from films and web video. **The terms of use were not verified** by the preparer. |
+| UCF101 | K. Soomro, A. R. Zamir, M. Shah. "UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild." CRCV-TR-12-01, 2012. arXiv:1212.0402 | Class names (prompts), splits, evaluation | Downloaded from the official CRCV page (verified from local download metadata). The official page requests citation and states **no licence and no redistribution permission** (checked 2026-11-02), so **redistribution is unresolved / not permitted on the evidence available**. Videos originate from YouTube. Not redistributed here. |
+| HMDB51 | H. Kuehne, H. Jhuang, E. Garrote, T. Poggio, T. Serre. "HMDB: A Large Video Database for Human Motion Recognition." ICCV 2011 | Cross-dataset evaluation (mapped categories) | Downloaded from the official Serre Lab source (**maintainer attestation**). Licence **reported** as CC BY 4.0 by secondary sources citing the official page; **not confirmed** from the official page, which has moved and could not be retrieved (2026-11-02). Clips come from films and web video, and their underlying rights are not resolved by a dataset licence. Not redistributed here. |
 
 **What this repository publishes about the datasets:**
 - class names and aggregate statistics;
@@ -55,8 +61,11 @@ The licences were read from the installed packages' metadata on
 ## 4. Category mapping
 
 - **Source:** the 12 UCF101↔HMDB51 categories used in Phase 2B are
-  transcribed from TA3N (the documents cite "Table 13"; that table number
-  is not yet verified, see `CITATIONS.md`): M.-H. Chen, Z. Kira, G. AlRegib,
+  transcribed from TA3N, **Table 13** ("The lists of all collected
+  categories in UCF and HMDB", §7.4.1 of the supplementary material). This
+  was **verified** on 2026-11-02 against the arXiv:1907.12743 rendering:
+  12/12 categories and 15/15 UCF101 classes match (see `CITATIONS.md`).
+  Reference: M.-H. Chen, Z. Kira, G. AlRegib,
   J. Yoo, R. Chen, J. Zheng. "Temporal Attentive Alignment for Large-Scale
   Video Domain Adaptation." ICCV 2019. arXiv:1907.12743.
 - **Where it is documented:**
@@ -73,9 +82,14 @@ The bibliographic verification status of every cited work is in
 ## 6. Provenance of this repository's code
 
 - **Creator and maintainer:** Syed Omer Ali.
-- **Origin of the code:** `AI_ASSISTANCE.md`.
-- **Files omitted from this reduced release:** files produced in the
-  maintainer's ChatGPT conversations, and files whose redistribution
-  rights are not yet verified.
-- **No licence** is granted until redistribution rights are verified and
-  the maintainer adds one.
+- **Full development history:** `AI_ASSISTANCE.md` (ChatGPT and Claude
+  Code).
+- **Source code in this release:** the six source files were written with
+  Claude Code under the maintainer's direction (session records).
+- **Similarity check.** A targeted public-code comparison of distinctive
+  fragments found no copied third-party code; the statistics follow the
+  cited papers. This comparison was not exhaustive.
+- **Not in this release.** The video inference pipeline is omitted. Parts
+  of it were produced in the maintainer's own ChatGPT conversations, and
+  the maintainer attests that no third-party source code was knowingly
+  supplied to those conversations.
