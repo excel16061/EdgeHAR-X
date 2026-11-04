@@ -1,1 +1,54 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research methods and subsequent studies — EdgeHAR-X</title><link rel="stylesheet" href="style.css"></head><body><header><strong>EdgeHAR-X / Guardian</strong><nav><a href="index.html">Overview</a><a href="guardian-v1.html">V1</a><a href="guardian-v2.html">V2</a><a href="guardian-v3.html">V3</a><a href="research.html">Research</a></nav></header><main><h1>Research methods and subsequent studies</h1><h2>TemporalGuard and dataset shift</h2><p>Phase 2B evaluated frozen monitors on HMDB51 mapped categories, not all 51 classes. The primary set contained 797 clips in 12 categories; the secondary set contained 177 clips. The sets share source groups and are not independent replications.</p><h2>Confirmatory outcome</h2><p>None of the three preregistered primary hypotheses met the prespecified rejection criteria. H2 and H3 remained inconclusive, rather than demonstrating equivalence or no effect. Descriptive improvements did not pass all required corrections.</p><h2>Engineering validation</h2><p>The original P3 gradient check failed; a separately preregistered P3-v2 validation passed. The original failure remains recorded. No adversarial robustness result was established.</p><h2>Adaptive Temporal Evidence</h2><p>ATE proposes allocating additional temporal observations to uncertain clips. Its Study E real-data evaluation has not been executed. Synthetic software tests are not evidence of improved accuracy.</p><h2>Reproducibility</h2><p>Aggregate results and analysis documents are available in the reduced repository. Video inference modules, some per-clip records, and full rerun capability are withheld. Independent replication has not occurred.</p><p><a href="https://github.com/excel16061/EdgeHAR-X/blob/main/RESULTS.md">Results</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/REPRODUCIBILITY.md">Reproducibility</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/ROADMAP.md">Roadmap</a></p></main><footer>Syed Omer Ali · Research documentation · Internal verification only · <a href="https://github.com/excel16061/EdgeHAR-X">Repository</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/AI_ASSISTANCE.md">Development provenance</a></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Temporal reliability research — EdgeHAR-X</title><link rel="stylesheet" href="style.css"><style>.table-wrap{overflow-x:auto;margin:1.5rem 0}caption{text-align:left;font-weight:600;padding-bottom:10px}table{min-width:540px}th[scope="row"]{font-weight:500}main p{max-width:78ch}main>h2{margin-top:2.5rem}nav a[aria-current="page"]{font-weight:700}</style></head><body><header><strong>EdgeHAR-X / Guardian</strong><nav><a href="index.html">Overview</a><a href="guardian-v1.html">V1</a><a href="guardian-v2.html">V2</a><a href="guardian-v3.html">V3</a><a href="research.html" aria-current="page">Research</a></nav></header><main>
+<h1>Temporal reliability in video action recognition</h1>
+<p>By Syed Omer Ali · EdgeHAR-X / TemporalGuard</p>
+<p>A video model can give a high score to the wrong action. This project examines whether checking the same clip through several altered views helps identify those mistakes. The experiments use a frozen X-CLIP B/32 model, eight frames per clip and 101 UCF101 action prompts.</p>
+
+<h2>What the monitors measure</h2>
+<p>The baseline, maximum softmax probability (MSP), uses the score from one prediction. Guardian compares predictions under image and frame corruptions. TemporalGuard compares a prediction with a uniform view and four temporal segments. The question is whether those extra observations help distinguish correct predictions from errors within the same action class.</p>
+<div class="table-wrap"><table>
+<caption>Monitor configuration</caption>
+<thead><tr><th scope="col">Monitor</th><th scope="col">Forward passes</th><th scope="col">Signal</th></tr></thead>
+<tbody><tr><th scope="row">MSP</th><td>1</td><td>Confidence on the clean clip</td></tr>
+<tr><th scope="row">Guardian-O / Full</th><td>2 / 5</td><td>Agreement under corruption probes</td></tr>
+<tr><th scope="row">TemporalGuard</th><td>6</td><td>Consistency across temporal views</td></tr></tbody>
+</table></div>
+<p>Acceptance thresholds were set on UCF101 calibration data with a target coverage of 70%. HMDB51 was used for evaluation, not for fitting these thresholds. Coverage is the proportion of predictions accepted; selective risk is the error rate among accepted predictions.</p>
+
+<h2>UCF101 baseline</h2>
+<p>The Guardian v3 evaluation used 505 group-disjoint clips across 101 classes from the official training partition. Clean top-1 accuracy was 68.7%. The official test list had been inspected during earlier work.</p>
+<div class="table-wrap"><table>
+<caption>Recorded Guardian v3 evaluation</caption>
+<thead><tr><th scope="col">Monitor</th><th scope="col">Coverage</th><th scope="col">Selective risk</th><th scope="col">Median model time / clip</th></tr></thead>
+<tbody><tr><th scope="row">MSP</th><td>72.1%</td><td>20.1%</td><td>125 ms</td></tr>
+<tr><th scope="row">Guardian-O</th><td>70.7%</td><td>19.3%</td><td>262 ms</td></tr>
+<tr><th scope="row">Guardian-Full</th><td>71.9%</td><td>19.3%</td><td>669 ms</td></tr></tbody>
+</table></div>
+<p>The recorded risk differences against MSP were −0.7 percentage points for Guardian-O (95% interval: −2.5 to +0.9) and −0.8 for Guardian-Full (−3.3 to +1.7). Both intervals include zero. These measurements do not establish a risk reduction, and the additional model calls increased computation time.</p>
+
+<h2>Does the signal transfer to HMDB51?</h2>
+<p>An exploratory study used 180 clips in six mapped HMDB51 classes. Its pooled result initially favoured Guardian-Full, but the audit estimated that about 76% of the AURC difference could be explained by class composition alone. The result did not survive a hierarchical bootstrap that also resampled classes. This motivated a larger study with within-class comparisons.</p>
+<p>Phase 2B used a primary set of 797 clips in 12 mapped categories, with 189 mapped prediction errors and 76.3% clean mapped accuracy. A secondary set contained 177 clips. These are subsets of HMDB51, not a full 51-class evaluation; the sets share source groups and are not independent replications.</p>
+<div class="table-wrap"><table>
+<caption>Phase 2B primary comparisons on set P</caption>
+<thead><tr><th scope="col">Comparison</th><th scope="col">Estimate</th><th scope="col">95% cluster interval</th><th scope="col">Holm-adjusted p</th></tr></thead>
+<tbody><tr><th scope="row">MSP within-class AUROC</th><td>0.626</td><td>0.514 to 0.726</td><td>0.055 (vs 0.5)</td></tr>
+<tr><th scope="row">Guardian-Full − MSP</th><td>+0.028</td><td>−0.037 to +0.098</td><td>0.401</td></tr>
+<tr><th scope="row">TG0 − MSP</th><td>+0.035</td><td>−0.007 to +0.080</td><td>0.148</td></tr></tbody>
+</table></div>
+<p>Within-class AUROC measures how well a score separates correct and incorrect predictions within an action class; 0.5 represents random ranking. Intervals above resample source groups. The hypotheses and analysis rules were frozen before confirmatory inference.</p>
+<p>None of the three primary hypotheses met the prespecified rejection criteria. Guardian-Full and TG0 remain inconclusive: the study established neither an improvement nor equivalence within ±0.03. Intervals that also resampled classes were wider.</p>
+<p>TG-min showed a descriptive within-class gain of +0.075 (95% cluster interval: +0.011 to +0.141), but it did not pass the in-family Holm correction or the hierarchical criterion. At fixed thresholds, it accepted 58.7% of clips with a selective risk of 6.2%. That lower risk comes with lower coverage and is not a comparison at equal coverage.</p>
+
+<h2>Computation and validation</h2>
+<p>Multi-view monitors used roughly two to seven times the model time of MSP. Video decoding accounted for a median 661 ms per clip in the Phase 2B measurements, so model time alone does not describe end-to-end latency. Measurements come from one Apple-silicon laptop.</p>
+<p>Phase 3 preparation checked a differentiable version of the frozen pipeline. Pixel parity passed on 950 views, and output parity preserved all tested top-1 predictions and acceptance decisions. The original gradient check failed: 24 of 25 directions passed, with a worst relative error of 8.70% against a 5% limit.</p>
+<p>A separate, prospectively frozen P3-v2 protocol passed on five new clips. It supports one-step gradient fidelity under that protocol; it does not replace the original failed check or establish multi-step behaviour. No adversarial robustness result has been established.</p>
+
+<h2>Work in progress: Adaptive Temporal Evidence</h2>
+<p>ATE proposes spending additional temporal observations on uncertain clips. Its Study E real-data evaluation has not been executed. There are no measured accuracy or efficiency improvements to report for that study.</p>
+
+<h2>Scope and records</h2>
+<p>These findings cover one backbone and mapped action categories. The label mapping can mark plausible predictions as errors, and results may change with other models, prompts or classes. The work has not been peer-reviewed or independently replicated.</p>
+<p>The public release contains aggregate results, analysis code and reports. It excludes the complete video inference pipeline and some per-clip records, so it does not support a full rerun from video. The tables on this page summarise saved project records; no new experiments were run for this update.</p>
+<p><a href="https://github.com/excel16061/EdgeHAR-X/blob/e9e4647d0de99459feb1434ad42c4c577415b89b/RESULTS.md">Results and source-file references</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/METHODOLOGY.md">Methods</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/REPRODUCIBILITY.md">Reproducibility</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/ROADMAP.md">Planned work</a></p>
+</main><footer>Syed Omer Ali · Research documentation · Internal verification only · <a href="https://github.com/excel16061/EdgeHAR-X">Repository</a> · <a href="https://github.com/excel16061/EdgeHAR-X/blob/main/AI_ASSISTANCE.md">Development provenance</a></footer></body></html>
